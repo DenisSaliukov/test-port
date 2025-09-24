@@ -1,0 +1,352 @@
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url(../fonts/Roboto-Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url(../fonts/Roboto-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url(../fonts/Roboto-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url(../fonts/Roboto-Thin.woff2) format("woff2");
+  font-weight: 100;
+  font-style: normal
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: 0
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box
+}
+*::after,
+*::before {
+  display: inline-block
+}
+body,
+html {
+  height: 100%;
+  min-width: 320px
+}
+body {
+  color: #000;
+  line-height: 1;
+  font-family: Roboto;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+button,
+input,
+textarea {
+  font-family: Roboto;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(0,0,0,0)
+}
+input,
+textarea {
+  width: 100%
+}
+label {
+  display: inline-block
+}
+button,
+option,
+select {
+  cursor: pointer
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none
+}
+ul li {
+  list-style: none
+}
+img {
+  vertical-align: top
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden
+}
+@supports (overflow:clip) {
+  .wrapper {
+    overflow: clip
+  }
+}
+.wrapper>main {
+  flex: 1 1 auto
+}
+.wrapper>* {
+  min-width: 0
+}
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 .9375rem
+}
+[class*="--gc"] {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: .9375rem 1fr minmax(auto,73.125rem) 1fr .9375rem
+}
+[class*="--gc"]>* {
+  min-width: 0;
+  grid-column: 3/4
+}
+.ibg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.ibg--top {
+  -o-object-position: top;
+  object-position: top
+}
+.ibg--bottom {
+  -o-object-position: bottom;
+  object-position: bottom
+}
+.ibg--left {
+  -o-object-position: left;
+  object-position: left
+}
+.ibg--right {
+  -o-object-position: right;
+  object-position: right
+}
+.ibg--contain {
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.header__active {
+  display: flex;
+  gap: 1.875rem;
+  justify-content: center;
+  align-items: center
+}
+.header__slider {
+  width: 12.5rem;
+  height: 4.375rem
+}
+.header__wrapper {
+  display: flex;
+  width: 100%
+}
+.header__slide {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  display: flex;
+  justify-content: center
+}
+.header__slide svg {
+  transition: all 1s ease 0s;
+  width: 3.4375rem;
+  opacity: 0
+}
+.header__slide.swiper-slide-active {
+  -webkit-filter: none;
+  filter: none
+}
+.header__slide.swiper-slide-active svg {
+  opacity: 1;
+  transition: all 1s ease 0s
+}
+.header__btn {
+  position: relative;
+  width: 4.375rem;
+  height: 3.125rem
+}
+.header__btn svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.header__btn--prev svg {
+  -webkit-transform: scaleX(-1) rotate(-90deg);
+  transform: scaleX(-1) rotate(-90deg)
+}
+.header__btn--next svg {
+  -webkit-transform: scaleX(1) rotate(-90deg);
+  transform: scaleX(1) rotate(-90deg)
+}
+.top-block {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0
+}
+.top-block__bg {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0
+}
+.top-block__btn-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  width: 10rem;
+  height: 3.125rem
+}
+.top-block__btn {
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  -webkit-animation: main-btn 5s ease 1 none;
+  animation: main-btn 5s ease 1 none;
+  border-radius: 1.875rem;
+  position: relative;
+  background-color: #fff;
+  transition: opacity .7s ease 0s
+}
+.top-block__btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 1.875rem;
+  outline: .1875rem solid #fff;
+  outline-offset: .1875rem;
+  -webkit-animation: main-btn-outline 2s linear 4s 1 both;
+  animation: main-btn-outline 2s linear 4s 1 both
+}
+@-webkit-keyframes main-btn {
+  0% {
+    background-color: rgba(0,0,0,0);
+    opacity: 0;
+    -webkit-transform: scale(.7);
+    transform: scale(.7)
+  }
+  80% {
+    box-shadow: -1px 1px 11px -14px rgba(255,255,255,.2)
+  }
+  95% {
+    box-shadow: 0 1px 9px 18px rgba(255,255,255,.39)
+  }
+  100% {
+    background-color: #fff;
+    opacity: .8;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+@keyframes main-btn {
+  0% {
+    background-color: rgba(0,0,0,0);
+    opacity: 0;
+    -webkit-transform: scale(.7);
+    transform: scale(.7)
+  }
+  80% {
+    box-shadow: -1px 1px 11px -14px rgba(255,255,255,.2)
+  }
+  95% {
+    box-shadow: 0 1px 9px 18px rgba(255,255,255,.39)
+  }
+  100% {
+    background-color: #fff;
+    opacity: .8;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+@-webkit-keyframes main-btn-outline {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: .8
+  }
+}
+@keyframes main-btn-outline {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: .8
+  }
+}
+.swiper {
+  overflow: hidden
+}
+.swiper-initialized {
+  touch-action: pan-y
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  display: flex;
+  position: relative
+}
+.swiper-vertical .swiper-wrapper {
+  flex-direction: column
+}
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start
+}
+.swiper-initialized .swiper-slide {
+  flex-shrink: 0
+}
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0)
+}
+.swiper-button-lock {
+  display: none!important
+}
+@media (any-hover:hover) {
+  .top-block__btn:hover {
+    opacity: 1
+  }
+}
